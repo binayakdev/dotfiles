@@ -7,7 +7,7 @@ window:
 
 font:
   normal:
-    family: Hack Nerd Font
+    family: Hack Nerd Font # You need to install the Hack Nerd Font
     style: Regular
 
 # Background opacity
