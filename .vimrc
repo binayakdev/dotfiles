@@ -33,17 +33,37 @@ call plug#begin()
    Plug 'morhetz/gruvbox' " This is the colorscheme for vim
    Plug 'preservim/NERDTree' " A file system explorer
    Plug 'vim-utils/vim-man' " To view man pages in vim
-   "" Plug 'ycm-core/YouCompleteMe' " Code auto completion
    Plug 'sheerun/vim-polyglot' " A collection of language packs
-   Plug 'tpope/vim-surround' " Provides mappings to easily delete, change and add such surroundings in pairs. 
+   Plug 'tpope/vim-surround' " Provides mappings to easily delete, change and add such surroundings in pairs.
    Plug 'Raimondi/delimitMate' " Autmatically closes parentheses, brackets, quotes, XML tags and more
    Plug 'vim-airline/vim-airline' " Nice statusline at the bottom of vim window
    Plug 'vim-syntastic/syntastic' " Checks the syntax
+   Plug 'tpope/vim-commentary' " Better commenting
    Plug 'ryanoasis/vim-devicons' " Adds icons to the plugins
    Plug 'vim-airline/vim-airline-themes' " This is the official theme repository for vim-airline
    Plug 'mattn/emmet-vim' " This is emmet for HTML
+   Plug 'neoclide/coc.nvim', {'branch': 'release'} "Code completion and intellisense for javascript/typescript in vim
+   Plug 'junegunn/fzf.vim'
+   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " This is a fuzzy finder to select apps
+   " Add a fuzzy finder plugin in the future to search for files (fzf.vim
+   " maybe it is only for neo vim)
 
 call plug#end()
+
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
+" Setting checkers for languages
+let g:syntastic_python_checkers = ['pylint', 'pep8']
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -53,14 +73,21 @@ let g:airline#extensions#tabline#enabled = 1
 " Nerd Tree
 nnoremap<C-b> :NERDTreeToggle<CR>
 
+" Fuzzy finder i.e. fzf plugin
+nnoremap <silent> <C-f> :Files<CR>
+
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**' --glob '!build/**' --glob '!.vscode' --glob '!node_modules'"
+
 " redefining the trigger key for emmet
 let g:user_emmet_leader_key=','
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,ejs EmmetInstall
 
-" c++11 support in syntastic
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
+" Checkers for different programs
+let g:syntastic_python_checkers = ['pylint']
 
 colorscheme gruvbox
 set background=dark
+
+" https://thevaluable.dev/vim-adept/ For some cool vim tutorials
