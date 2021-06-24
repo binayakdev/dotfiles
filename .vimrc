@@ -24,6 +24,12 @@ let &t_EI = "\<esc>[ q"  " default cursor (usually blinking block) otherwise
 " Python syntax highlight https://github.com/vim-python/python-syntax
 let g:python_highlight_all = 1
 
+" Cycling through the buffer
+nnoremap <silent> <C-Right> :bn<CR>
+nnoremap <silent> <C-Left> :bp<CR>
+nnoremap <silent> <Leader>q :bd<CR>
+
+" Cycling through the tabs
 nnoremap <F7> :tabp<CR>
 nnoremap <F8> :tabn<CR>
 
@@ -55,6 +61,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+
+" Setting checkers for languages
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_javascript_checkers = ['eslint']
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
@@ -62,8 +73,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 
-" Setting checkers for languages
-let g:syntastic_python_checkers = ['pylint', 'pep8']
+nnoremap <F5> :SyntasticCheck<CR>
+nnoremap <C-down> :lnext<CR>
+nnoremap <C-up> :lprevious<CR>
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -91,3 +103,9 @@ colorscheme gruvbox
 set background=dark
 
 " https://thevaluable.dev/vim-adept/ For some cool vim tutorials
+"
+" Info: Specific file settings
+" autocmd BufRead, BufNewFile *.txt setfiletype text 
+" The above line can be used to specify settings for txt files.
+" The file should be put in ~/.vim/ftdetect/text.vim (this path may be
+" different on windows)
