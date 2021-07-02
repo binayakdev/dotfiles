@@ -42,7 +42,7 @@ call plug#begin()
    Plug 'ryanoasis/vim-devicons' " Adds glyph icons in vim. Terminal must use a font that supports glyphs
    Plug 'NLKNguyen/papercolor-theme' " Paper like theme for vim
 
-" Exnteding vim functionalities
+" Extending vim functionalities
    Plug 'preservim/NERDTree' " A plugin to explore directories in the side tab view
    Plug 'vim-utils/vim-man' " To view man pages in vim
    Plug 'tpope/vim-fugitive' " A plugin for git in vim
@@ -103,6 +103,8 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall " Emmet only works for HTML and CSS files
 
 "======================= Key remaps for vim =============================
+" Opening vimrc from anywhere
+nnoremap <silent> ev : e ~/.vimrc<CR>
 
 " Cycling through the buffer
 nnoremap <silent> <C-Right> :bn<CR>
