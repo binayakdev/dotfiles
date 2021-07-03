@@ -43,3 +43,6 @@ alias starship_install='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 
 # The Starship promp
 eval "$(starship init zsh)"
+
+# This enables fish shell like highlighting for zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
