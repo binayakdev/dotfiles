@@ -12,7 +12,7 @@ disabled = true
 
 [hostname]
 ssh_only = false
-style = "bold dimmed white"
+style = "bold dimmed red"
 format =  "@[$hostname]($style) "
 trim_at = ".companyname.com"
 disabled = false
