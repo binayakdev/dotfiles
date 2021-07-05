@@ -32,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 
 # My aliases
 alias pp='cd ~/Projects/Personal'
-alias gt='cd ~/Entertainment/TV Shows'
+alias gt='cd ~/Entertainment/"TV Shows"'
 alias gm='cd ~/Entertainment/Movies'
 alias gw='cd ~/Entertainment/Wallpapers'
 alias gd='cd ~/Documents'
@@ -45,4 +45,17 @@ alias starship_install='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 eval "$(starship init zsh)"
 
 # This enables fish shell like highlighting for zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+    sudo apt install zsh-syntax-highlighting
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# Enabling auto completion in zsh based on history
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    sudo apt install zsh-autosuggestions
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi

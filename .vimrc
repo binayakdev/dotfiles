@@ -127,8 +127,8 @@ nnoremap <C-down> :lnext<CR>
 nnoremap <C-up> :lprevious<CR>
 
 " Keybindings for split resizing
-noremap <silent> <Esc>l :vertical resize +2<CR>
-noremap <silent> <Esc>h :vertical resize -2<CR>
+noremap <silent> <Esc>l :vertical resize -2<CR>
+noremap <silent> <Esc>h :vertical resize +2<CR>
 noremap <silent> <Esc>k :resize +2<CR>
 noremap <silent> <Esc>j :resize -2<CR>
 
