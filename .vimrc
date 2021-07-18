@@ -104,7 +104,7 @@ autocmd FileType html,css EmmetInstall " Emmet only works for HTML and CSS files
 
 "======================= Key remaps for vim =============================
 " Opening vimrc from anywhere
-nnoremap <silent> ev : e ~/.vimrc<CR>
+nnoremap <silent> <leader>v : e ~/.vimrc<CR>
 
 " Cycling through the buffer
 nnoremap <silent> <C-Right> :bn<CR>
@@ -127,8 +127,8 @@ nnoremap <C-down> :lnext<CR>
 nnoremap <C-up> :lprevious<CR>
 
 " Keybindings for split resizing
-noremap <silent> <Esc>l :vertical resize -2<CR>
-noremap <silent> <Esc>h :vertical resize +2<CR>
+noremap <silent> <Esc>l :vertical resize +2<CR>
+noremap <silent> <Esc>h :vertical resize -2<CR>
 noremap <silent> <Esc>k :resize +2<CR>
 noremap <silent> <Esc>j :resize -2<CR>
 

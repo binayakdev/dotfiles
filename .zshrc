@@ -31,6 +31,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # My aliases
+alias nv='nvim'
 alias pp='cd ~/Projects/Personal'
 alias gt='cd ~/Entertainment/"TV Shows"'
 alias gm='cd ~/Entertainment/Movies'
