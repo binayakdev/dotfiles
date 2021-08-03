@@ -56,6 +56,7 @@ call plug#begin()
    Plug 'junegunn/fzf.vim'
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " A fuzzy finder that help to find files in the working directory
 
+
 call plug#end()
 
 "======================= Syntastic configuration =============================

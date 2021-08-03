@@ -1,13 +1,19 @@
 # Configuration for alacritty
 
 window:
+  dimensions:
+    columns: 100
+    lines: 85
+
   padding:
     x: 5
     y: 5
 
+  dynamic_padding: false
+
 font:
   normal:
-    family: Hack Nerd Font # You need to install the Hack Nerd Font
+    family: Hack Nerd Font  # You need to install the Hack Nerd Font
     style: Regular
 
 # Background opacity
