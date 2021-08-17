@@ -1,5 +1,6 @@
 # Neofetch for system specifications
 neofetch
+#pokemon-colorscripts -r
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/binayak/.oh-my-zsh"
