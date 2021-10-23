@@ -1,5 +1,4 @@
-"         __
-" .--.--.|__|.--------.----.----.
+"robbyrussell .--.--.|__|.--------.----.----.
 " |  |  ||  ||        |   _|  __|
 "  \___/ |__||__|__|__|__| |____|
 "
@@ -25,6 +24,13 @@ set showmatch "highlights matching brackets
 set incsearch "search as characters are entered
 set nohlsearch "doesn't highlights matching searches
 set signcolumn=yes " shows the column that shows error symbols
+set splitbelow splitright " set vertical split to open below and horizontal to right
+" This shows the highlights the line the cursor is in
+   set cursorline
+   hi cursorline cterm=none term=none
+   autocmd WinEnter * setlocal cursorline
+   autocmd WinLeave * setlocal nocursorline
+   highlight CursorLine guibg=#303000 ctermbg=234
 set nocompatible " required for vim polyglot
 let &t_SI = "\<esc>[5 q"  " blinking I-beam in insert mode
 let &t_SR = "\<esc>[3 q"  " blinking underline in replace mode
@@ -43,11 +49,13 @@ call plug#begin()
    Plug 'NLKNguyen/papercolor-theme' " Paper like theme for vim
 
 " Extending vim functionalities
+   Plug 'mhinz/vim-startify' " Shows recently used or bookmarked files in the start screen
    Plug 'preservim/NERDTree' " A plugin to explore directories in the side tab view
    Plug 'vim-utils/vim-man' " To view man pages in vim
    Plug 'tpope/vim-fugitive' " A plugin for git in vim
    Plug 'sheerun/vim-polyglot' " Better syntax highlighting and language packs
    Plug 'tpope/vim-surround' " Provides mappings to easily delete, change and add add surroundings in pairs
+   Plug 'Yggdroot/indentLine' " Visual representation of the indentation level
    Plug 'Raimondi/delimitMate' " Autmatically closes parentheses, brackets, quotes, XML tags and more
    Plug 'vim-syntastic/syntastic' " Checks the syntax.
    Plug 'tpope/vim-commentary' " Better commenting. Use gcc to toggle comments
@@ -55,7 +63,6 @@ call plug#begin()
    Plug 'neoclide/coc.nvim', {'branch': 'release'} "Code completion and intellisense for various languages
    Plug 'junegunn/fzf.vim'
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " A fuzzy finder that help to find files in the working directory
-
 
 call plug#end()
 
@@ -95,7 +102,7 @@ let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffse
 " The following setting doesn't search files in the directory written after
 " the --glob flag. Need to install 'ripgrep' package in the system for this to
 " work.
-let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**' --glob '!build/**' --glob '!.vscode' --glob '!node_modules'"
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git/**' --glob '!build/**' --glob '!.vscode' --glob '!node_modules' --glob '!venv/**'"
 
 "======================= Emmet configuration =============================
 
@@ -103,7 +110,14 @@ let g:user_emmet_leader_key=',' " global key remapped from default <C-Y> leader
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall " Emmet only works for HTML and CSS files
 
-"======================= Key remaps for vim =============================
+"======================= Key remaps for vim/nvim =============================
+
+"Better window navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " Opening vimrc from anywhere
 nnoremap <silent> <leader>v : e ~/.vimrc<CR>
 
@@ -127,17 +141,21 @@ nnoremap <F5> :SyntasticCheck<CR>
 nnoremap <C-down> :lnext<CR>
 nnoremap <C-up> :lprevious<CR>
 
-" Keybindings for split resizing
-noremap <silent> <Esc>l :vertical resize +2<CR>
-noremap <silent> <Esc>h :vertical resize -2<CR>
-noremap <silent> <Esc>k :resize +2<CR>
-noremap <silent> <Esc>j :resize -2<CR>
+" Split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+" Resize window
+" nmap <C-w><left> <C-w><
+" nmap <C-w><right> <C-w>>
+" nmap <C-w><up> <C-w>+
+" nmap <C-w><down> <C-w>-
 
 "======================= Color scheme configuration =============================
 
 colorscheme gruvbox
 set background=dark
-" The folllowing line makes the vim background transparent
+" The folllowing line makes the vim/nvim background transparent
 hi Normal guibg=NONE ctermbg=NONE
 
 

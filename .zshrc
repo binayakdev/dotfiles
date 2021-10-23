@@ -9,7 +9,7 @@ export ZSH="/home/binayak/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -32,6 +32,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # My aliases
+alias ls='lsd'
 alias nv='nvim'
 alias pp='cd ~/Projects/Personal'
 alias gt='cd ~/Entertainment/"TV Shows"'
@@ -39,6 +40,7 @@ alias gm='cd ~/Entertainment/Movies'
 alias gw='cd ~/Entertainment/Wallpapers'
 alias gd='cd ~/Documents'
 alias pm='cd ~/Projects/Personal/Misc'
+alias open='xdg-open'
 alias config='cd ~/.config'
 alias starship_update='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 alias starship_install='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
@@ -61,3 +63,6 @@ else
     sudo apt install zsh-autosuggestions
     source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
+
+# Created by `pipx` on 2021-09-25 04:12:17
+export PATH="$PATH:/home/binayak/.local/bin"
