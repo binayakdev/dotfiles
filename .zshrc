@@ -1,5 +1,5 @@
 # Neofetch for system specifications
-neofetch
+# neofetch
 #pokemon-colorscripts -r
 
 # Path to your oh-my-zsh installation.
