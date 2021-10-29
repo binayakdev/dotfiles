@@ -33,7 +33,7 @@ source $ZSH/oh-my-zsh.sh
 
 # My aliases
 alias ls='lsd'
-alias nv='nvim'
+alias v='nvim'
 alias pp='cd ~/Projects/Personal'
 alias gt='cd ~/Entertainment/"TV Shows"'
 alias gm='cd ~/Entertainment/Movies'
@@ -44,6 +44,10 @@ alias open='xdg-open'
 alias config='cd ~/.config'
 alias starship_update='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 alias starship_install='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
+
+# Bing Keys
+bindkey -s '^x' 'ranger^M'
+bindkey -s '^t' 'tmux^M'
 
 # The Starship promp
 eval "$(starship init zsh)"

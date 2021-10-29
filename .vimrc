@@ -56,10 +56,10 @@ call plug#begin()
    Plug 'tpope/vim-surround' " Provides mappings to easily delete, change and add add surroundings in pairs
    Plug 'Yggdroot/indentLine' " Visual representation of the indentation level
    Plug 'Raimondi/delimitMate' " Autmatically closes parentheses, brackets, quotes, XML tags and more
-   Plug 'vim-syntastic/syntastic' " Checks the syntax.
+   " Plug 'vim-syntastic/syntastic' " Checks the syntax.
    Plug 'tpope/vim-commentary' " Better commenting. Use gcc to toggle comments
    Plug 'mattn/emmet-vim' " This is emmet for HTML
-   " Plug 'neoclide/coc.nvim', {'branch': 'release'} "Code completion and intellisense for various languages
+   Plug 'neoclide/coc.nvim', {'branch': 'release'} "Code completion and intellisense for various languages
    Plug 'junegunn/fzf.vim'
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " A fuzzy finder that help to find files in the working directory
 
@@ -77,16 +77,20 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+" let g:syntastic_error_symbol = '❌'
+" let g:syntastic_style_error_symbol = '⁉️'
+" let g:syntastic_warning_symbol = '⚠️'
+" let g:syntastic_style_warning_symbol = '💩'
 
 " Python
 let g:syntastic_python_checkers = ['pylint']
 
 " Javascript
+" let g:syntastic_javascript_eslint_exe='$(node_modules .bin)/eslint'
 let g:syntastic_javascript_checkers = ['eslint']
+
+"======================= COC configuration =============================
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 "======================= Airline configuration =============================
 
