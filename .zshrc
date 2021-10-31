@@ -45,9 +45,6 @@ alias config='cd ~/.config'
 alias starship_update='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 alias starship_install='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 
-# Bing Keys
-bindkey -s '^x' 'ranger^M'
-bindkey -s '^t' 'tmux^M'
 
 # The Starship promp
 eval "$(starship init zsh)"
