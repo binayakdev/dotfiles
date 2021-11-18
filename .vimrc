@@ -171,4 +171,5 @@ hi Normal guibg=NONE ctermbg=NONE
 " The file should be put in ~/.vim/ftdetect/text.vim (this path may be
 " different on windows)
 "
+
 " This is the comment from the test branch
