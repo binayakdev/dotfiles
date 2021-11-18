@@ -1,3 +1,0 @@
-This is a line from the test branch.
-
-This is me Mario!!
