@@ -5,7 +5,7 @@
 
 "======================= Some basic settings ============================= 
 syntax on
-set noerrorbells "Doesn't ring a bell when their is an error
+set noerrorbells "Doesn't ring a bell when there is an error
 set tabstop=4 softtabstop=4 "Defaults the tab spacing to 4
 set shiftwidth=4
 set expandtab
@@ -18,7 +18,7 @@ set incsearch
 set relativenumber
 set encoding=utf-8
 set wildmenu "graphical auto complete menu
-set lazyredraw "redraws the screne when it needs to
+set lazyredraw "redraws the screen when it needs to
 set showmatch "highlights matching brackets
 set incsearch "search as characters are entered
 set nohlsearch "doesn't highlights matching searches
@@ -171,4 +171,5 @@ hi Normal guibg=NONE ctermbg=NONE
 " The file should be put in ~/.vim/ftdetect/text.vim (this path may be
 " different on windows)
 "
-" This is a comment from the something branch
+
+" This is the comment from the test branch

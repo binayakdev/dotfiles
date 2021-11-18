@@ -33,7 +33,9 @@ source $ZSH/oh-my-zsh.sh
 
 # My aliases
 alias ls='lsd'
+alias rm='rm -vI'
 alias v='nvim'
+alias bc='batcat'
 alias pp='cd ~/Projects/Personal'
 alias gt='cd ~/Entertainment/"TV Shows"'
 alias gm='cd ~/Entertainment/Movies'
