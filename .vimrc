@@ -170,3 +170,5 @@ hi Normal guibg=NONE ctermbg=NONE
 " The above line can be used to specify settings for txt files.
 " The file should be put in ~/.vim/ftdetect/text.vim (this path may be
 " different on windows)
+"
+" This is a comment from the something branch
