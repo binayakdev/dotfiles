@@ -32,7 +32,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # My aliases
-alias ls='lsd'
+alias ls='exa --header --icons'
 alias rm='rm -vI'
 alias v='nvim'
 alias bc='batcat'
