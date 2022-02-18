@@ -56,7 +56,7 @@ call plug#begin()
    Plug 'tpope/vim-surround' " Provides mappings to easily delete, change and add add surroundings in pairs
    Plug 'Yggdroot/indentLine' " Visual representation of the indentation level
    Plug 'Raimondi/delimitMate' " Autmatically closes parentheses, brackets, quotes, XML tags and more
-   " Plug 'vim-syntastic/syntastic' " Checks the syntax.
+   Plug 'vim-syntastic/syntastic' " Checks the syntax.
    Plug 'tpope/vim-commentary' " Better commenting. Use gcc to toggle comments
    Plug 'mattn/emmet-vim' " This is emmet for HTML
    Plug 'neoclide/coc.nvim', {'branch': 'release'} "Code completion and intellisense for various languages

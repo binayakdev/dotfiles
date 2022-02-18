@@ -15,6 +15,9 @@ env:
   # TERM:"" nvim
 
 window:
+
+  opacity: 0.85
+
   dimensions:
     columns: 100
     lines: 85
@@ -120,9 +123,6 @@ colors:
     magenta: '#8f3f71'
     cyan:    '#427b58'
     white:   '#928374'
-
-# Background opacity
-background_opacity: 0.85
 
 # Spaces per Tab (changes require restart)
 #
