@@ -47,6 +47,8 @@ alias config='cd ~/.config'
 alias starship_update='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 alias starship_install='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
 
+# Binding keys
+bindkey -s '^o' 'ranger^M'
 
 # The Starship promp
 eval "$(starship init zsh)"
@@ -69,3 +71,5 @@ fi
 
 # Created by `pipx` on 2021-09-25 04:12:17
 export PATH="$PATH:/home/binayak/.local/bin"
+
+

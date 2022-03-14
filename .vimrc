@@ -6,6 +6,7 @@
 "======================= Some basic settings ============================= 
 syntax on
 set noerrorbells "Doesn't ring a bell when there is an error
+set belloff=all " Disabling error bells for windows
 set tabstop=4 softtabstop=4 "Defaults the tab spacing to 4
 set shiftwidth=4
 set expandtab
@@ -59,7 +60,7 @@ call plug#begin()
    Plug 'vim-syntastic/syntastic' " Checks the syntax.
    Plug 'tpope/vim-commentary' " Better commenting. Use gcc to toggle comments
    Plug 'mattn/emmet-vim' " This is emmet for HTML
-   Plug 'neoclide/coc.nvim', {'branch': 'release'} "Code completion and intellisense for various languages
+   " Plug 'neoclide/coc.nvim', {'branch': 'release'} "Code completion and intellisense for various languages
    Plug 'junegunn/fzf.vim'
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " A fuzzy finder that help to find files in the working directory
 

@@ -16,7 +16,7 @@ env:
 
 window:
 
-  opacity: 1
+  opacity: 0.90
 
   dimensions:
     columns: 100
