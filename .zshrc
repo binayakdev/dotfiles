@@ -3,7 +3,7 @@
 #pokemon-colorscripts -r
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/binayak/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -31,45 +31,36 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# My aliases
-alias ls='exa --header --icons'
-alias rm='rm -vI'
-alias v='nvim'
-alias bc='batcat'
-alias pp='cd ~/Projects/Personal'
-alias gt='cd ~/Entertainment/"TV Shows"'
-alias gm='cd ~/Entertainment/Movies'
-alias gw='cd ~/Entertainment/Wallpapers'
-alias gd='cd ~/Documents'
-alias pm='cd ~/Projects/Personal/Misc'
-alias open='xdg-open'
-alias config='cd ~/.config'
-alias starship_update='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
-alias starship_install='sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
+platform='unknown'
+unamestr=$(uname)
+zsh_syntax_highlighting_path=""
+zsh_autosuggestions_path=""
+package_manager="apt"
 
-# Binding keys
-bindkey -s '^o' 'ranger^M'
-
-# The Starship promp
-eval "$(starship init zsh)"
+# Setting platform specific path and package installer
+case "$unamestr" in
+    "linux") 
+        zsh_syntax_highlighting_path="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+        zsh_autosuggestions_path="/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ;;
+    
+    "Darwin") 
+        zsh_syntax_highlighting_path="/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+        zsh_autosuggestions_path="/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+        package_manager="brew" ;;
+esac
 
 # This enables fish shell like highlighting for zsh
-if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "$zsh_syntax_highlighting_path" ]; then
+    source "$zsh_syntax_highlighting_path"
 else
-    sudo apt install zsh-syntax-highlighting
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    eval sudo ${package_manaer} install zsh-syntax-highlighting
+    source "$zsh_syntax_highlighting_path"
 fi
 
 # Enabling auto completion in zsh based on history
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f "$zsh_autosuggestions_path" ]; then
+    source "$zsh_autosuggestions_path" 
 else
-    sudo apt install zsh-autosuggestions
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    eval sudo ${package_manaer} install zsh-autosuggestions
+    source "$zsh_autosuggestions_path" 
 fi
-
-# Created by `pipx` on 2021-09-25 04:12:17
-export PATH="$PATH:/home/binayak/.local/bin"
-
-
