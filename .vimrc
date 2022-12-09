@@ -101,6 +101,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 "======================= Fuzzy Finder (fzf) configuration =============================
 
+set rtp+=/opt/homebrew/opt/fzf
+
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 " The following setting doesn't search files in the directory written after
 " the --glob flag. Need to install 'ripgrep' package in the system for this to
@@ -147,6 +149,7 @@ nnoremap <C-up> :lprevious<CR>
 " Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
+nmap sx :close<Return><C-w>w
 
 " Resize window
 " nmap <C-w><left> <C-w><
