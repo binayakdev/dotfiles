@@ -64,3 +64,9 @@ else
     eval sudo ${package_manaer} install zsh-autosuggestions
     source "$zsh_autosuggestions_path" 
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source /Users/binayakdev/.docker/init-zsh.sh || true # Added by Docker Desktop
